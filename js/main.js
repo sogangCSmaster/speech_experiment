@@ -23,7 +23,6 @@ let voices = [];
 
 const getVoices = () => {
   voices = synth.getVoices();
-
   // Loop through voices and create an option for each one
   voices.forEach(voice => {
     // Create option element
@@ -51,6 +50,7 @@ if (isFirefox) {
 if (isChrome) {
     if (synth.onvoiceschanged !== undefined) {
         synth.onvoiceschanged = getVoices;
+        // getVoices();
     }
 }
 
